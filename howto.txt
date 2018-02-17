@@ -1,0 +1,42 @@
+0. The password will print out as long as you run executable 1.
+
+1. For this one, I had to:
+   * Run the exectutable with gdb.
+   * Set a break point at the first line so that the gdb will give you the name of the function(password()).
+   * Disassemble the that function and observe the assembly.
+   * After the function generate a random number, it will store the number in a register.
+   * Break the line after the number generation and run the program with gdb.
+   * Use the command "info r" command to get the random number.
+   * Continue the project and enter the number you get when the project ask for.
+   * The password will print out after you enter the number.
+
+2. For this one, I had to:
+   * First, directly run the executable.
+   * According to the hint, we need to check whether the curl_easy_perform is successful or not.
+   * Use the ltrace for the exectutable and the return value for curl_easy_perform is 0.
+   * So that the call to curl_easy_perform is successful and the passward is yes.
+
+3. For this one, I had to:
+   * First, directly run the executable.
+   * Since the executable cannot find the file name in the directory,
+     we need to create a file with that name in the directory.
+   * Then, we need to change the permission of the file you just created.
+   * Use command "ls -l" to see all permissions of the file in the directory.
+   * The file you just created doesn't have the execute permission.
+   * Use command "chmod a+x <filename>" to change the permission of the file.
+   * Run the exectuable again, the password will print out on the screen.
+
+4. For this one, I had to:
+   * First, run the executable.
+   * The output demonstrates that the shared library is not found in the directory.
+   * Then we need to create a .so file based on the file name that the output gave.
+   * Based on lab3 matherial, create one .h file and one .c file(hw2.c, hw2.h) and one makefile.
+   * Then set the LD LIBRARY PATH environment variable with the current directory.
+   * Run the exectutable again, it will print new output 
+     which give the hint about the function content in the .c file.
+   * Use ltrace for the exectuble, it shows that there is a function called "secertoperation"
+     which has two parameters.
+   * The ltrace also give us two test cases, (input 3,6 and return 10.)(input 1,2 and return 4)
+   * So that the function in the C file is just add two parameter together then plus one
+     (e.g result = variable1 + variable2 + 1;)
+   * Run the executable then it will give you the password.
